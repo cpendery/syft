@@ -76,7 +76,7 @@ func New() (*cobra.Command, error) {
 	if err != nil {
 		return nil, err
 	}
-	// poweruser also uses the packagesCmd flags since it is a specialized version of the command
+	// poweruser also uses the packagesCmd flags since it is a specialized version of the packages command
 	err = po.AddFlags(poweruserCmd, v)
 	if err != nil {
 		return nil, err

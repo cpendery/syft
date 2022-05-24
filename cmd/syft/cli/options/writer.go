@@ -28,7 +28,8 @@ func MakeWriter(outputs []string, defaultFile string) (sbom.Writer, error) {
 
 // parseOptions utility to parse command-line option strings and retain the existing behavior of default format and file
 func parseOutputs(outputs []string, defaultFile string) (out []sbom.WriterOption, errs error) {
-	// always should have one option -- we generally get the default of "table", but just make sure
+	// always should have one option -- we generally get the default of "table"
+	// attestation commands use a single output and are defaulted to "syft-json"
 	if len(outputs) == 0 {
 		outputs = append(outputs, string(table.ID))
 	}
